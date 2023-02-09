@@ -1,0 +1,13 @@
+mat-card {
+  text-align: center;
+  background-color: white;
+
+  mat-card-content {
+    text-align: start;
+
+    span {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+}

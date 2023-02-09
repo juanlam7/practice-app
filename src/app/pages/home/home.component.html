@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <span>CONTACTS</span>
+  <span class="spacer"></span>
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="value"
+    />
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="this.value = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</mat-toolbar>
+<section class="home-container">
+  <div *ngFor="let user of usersList | searchFilter : value">
+    <app-card
+      [name]="user.name"
+      [lastName]="user.username"
+      [email]="user.email"
+      [phone]="user.phone"
+    ></app-card>
+  </div>
+</section>
